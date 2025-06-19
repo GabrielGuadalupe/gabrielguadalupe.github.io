@@ -90,16 +90,19 @@
       <script>
         const sugarImage = document.getElementById('bagosugar');
         const moneyImage = document.getElementbyID('money');
+        
         const moneyCounterDisplay = document.getElementById('moneyTotal'); 
         const bagCounterDisplay = document.getElementById('bagTotal');
+        
         let bagCurrentWidth = 400; // Initial width - must match CSS  
         let moneyCurrentWidth = 400;
         const defaultWidth = 400;
+        
         let numBags = 0; // Initialize counter 
         let numMoney = 10;
   
         sugarImage.addEventListener('click', function() {
-          bagCurrentWidth *= 1.10; // Increase width by 10%
+          bagCurrentWidth += 1.10; // Increase width by 10%
           sugarImage.style.width = bagCurrentWidth + 'px'; // Apply new width
           numBags++; // Increment the counter
           bagCounterDisplay.textContent = numBags; // Update counter display
