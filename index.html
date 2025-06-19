@@ -102,7 +102,7 @@
         let numMoney = 10;
   
         sugarImage.addEventListener('click', function() {
-          bagCurrentWidth += 1.10; // Increase width by 10%
+          bagCurrentWidth *= 1.10; // Increase width by 10%
           sugarImage.style.width = bagCurrentWidth + 'px'; // Apply new width
           numBags++; // Increment the counter
           bagCounterDisplay.textContent = numBags; // Update counter display
