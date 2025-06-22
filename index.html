@@ -102,32 +102,42 @@
         let numMoney = 10;
   
         sugarImage.addEventListener('click', function() {
-          bagCurrentWidth *= 1.10; // Increase width by 10%
-          sugarImage.style.width = bagCurrentWidth + 'px'; // Apply new width
-          numBags++; // Increment the counter
-		  numMoney -= 5;
-		  moneyCounterDisplay.textContent = numMoney;
-          bagCounterDisplay.textContent = numBags; // Update counter display
 
-          setTimeout(function() {
-              bagCurrentWidth = defaultWidth;
-            sugarImage.style.width = bagCurrentWidth + 'px';
-          }, 100); // Delay of 300 milliseconds before shrinking
-        });
+			if (numMoney >=5) {
+        	  bagCurrentWidth *= 1.10; // Increase width by 10%
+         	 sugarImage.style.width = bagCurrentWidth + 'px'; // Apply new width
+         	 numBags++; // Increment the counter
+		 	 numMoney -= 5;
+		 	 moneyCounterDisplay.textContent = numMoney;
+         	 bagCounterDisplay.textContent = numBags; // Update counter display
+
+          	setTimeout(function() {
+            	  bagCurrentWidth = defaultWidth;
+           	 sugarImage.style.width = bagCurrentWidth + 'px';
+         	 }, 100); // Delay of 300 milliseconds before shrinking
+
+			}
+
+        	});
    
         moneyImage.addEventListener('click', function() {
-          moneyCurrentWidth *= 1.10;
-          moneyImage.style.width = moneyCurrentWidth + 'px';
-          numMoney += 10;
-		  numBags -= 1;
-          moneyCounterDisplay.textContent = numMoney;
-		  bagCounterDisplay.textContent = numBags;
+
+			if (numBags >= 1) {
+        	 moneyCurrentWidth *= 1.10;
+          	moneyImage.style.width = moneyCurrentWidth + 'px';
+         	numMoney += 10;
+		  	numBags -= 1;
+          	moneyCounterDisplay.textContent = numMoney;
+		  	bagCounterDisplay.textContent = numBags;
 
           setTimeout(function() {
             moneyCurrentWidth = defaultWidth;
             moneyImage.style.width = moneyCurrentWidth + 'px';
           }, 100); // Delay of 300 milliseconds before shrinking
-        });
+
+		}
+
+		});
 
       </script>
 
