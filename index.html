@@ -24,7 +24,7 @@
     }              
     
     #bagosugar {
-                    width: 400px;
+                    width: 50%;
                     height: auto;
                     cursor: pointer;
                     transition: width 0.3s ease;
@@ -32,7 +32,7 @@
     }
     
     #money {
-                    width: 400px;
+                    width: 50%;
                     height: auto;
                     cursor: pointer;
                     transition: width 0.3s ease;
@@ -94,9 +94,9 @@
         const moneyCounterDisplay = document.getElementById('moneyTotal'); 
         const bagCounterDisplay = document.getElementById('bagTotal');
         
-        let bagCurrentWidth = 400; // Initial width - must match CSS  
-        let moneyCurrentWidth = 400;
-        const defaultWidth = 400;
+        let bagCurrentWidth = 50; // Initial width - must match CSS  
+        let moneyCurrentWidth = 50;
+        const defaultWidth = 50;
         
         let numBags = 0; // Initialize counter 
         let numMoney = 10;
@@ -105,7 +105,7 @@
 
 			if (numMoney >=5) {
         	  bagCurrentWidth *= 1.10; // Increase width by 10%
-         	 sugarImage.style.width = bagCurrentWidth + 'px'; // Apply new width
+         	 sugarImage.style.width = bagCurrentWidth + '%'; // Apply new width
          	 numBags++; // Increment the counter
 		 	 numMoney -= 5;
 		 	 moneyCounterDisplay.textContent = numMoney;
@@ -113,7 +113,7 @@
 
           	setTimeout(function() {
             	  bagCurrentWidth = defaultWidth;
-           	 sugarImage.style.width = bagCurrentWidth + 'px';
+           	 sugarImage.style.width = bagCurrentWidth + '%';
          	 }, 100); // Delay of 300 milliseconds before shrinking
 
 			}
@@ -124,7 +124,7 @@
 
 			if (numBags >= 1) {
         	 moneyCurrentWidth *= 1.10;
-          	moneyImage.style.width = moneyCurrentWidth + 'px';
+          	moneyImage.style.width = moneyCurrentWidth + '%';
          	numMoney += 10;
 		  	numBags -= 1;
           	moneyCounterDisplay.textContent = numMoney;
@@ -132,7 +132,7 @@
 
           setTimeout(function() {
             moneyCurrentWidth = defaultWidth;
-            moneyImage.style.width = moneyCurrentWidth + 'px';
+            moneyImage.style.width = moneyCurrentWidth + '%';
           }, 100); // Delay of 300 milliseconds before shrinking
 
 		}
