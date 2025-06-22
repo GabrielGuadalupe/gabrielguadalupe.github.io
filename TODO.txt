@@ -1,0 +1,28 @@
+Need to make the images scalable depending on what size screen/browser is running
+	-> Currently images are locked at 400px and do not scale with window changes...
+	this throws everything off. 
+
+Add more verbosity to the visuals to make it easier to understand you are buying/selling
+
+sugar cooker-first dude you can buy to make like .1 bag per second 
+sugar dealer can sell them 
+
+PREAMBLE - Describe how this is a universe where sugar is illegal
+
+	-> Perhaps multiple items and it would be structured like this 
+
+
+	|Sugar image|Money image| 
+
+	And you click the sugar to "buy" it and the money to sell it
+	Sugar chemists make the sugar but really slowly
+
+	You have to use money to buy the next chemist type to make another ingredient thatyou can either 
+		sell or use to make the next item
+	
+	Sugar 
+	Macaroon? A cookie you can make with just sugar
+	Chocolate
+	Chocolate chip cookie
+
+
