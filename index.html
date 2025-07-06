@@ -1,153 +1,63 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>C Clicker!</title>
+	<head>
 
-  <style>
-    #bagTotal {
-                    text-align: center;
-                    margin-top: 10px;
-                    font-family: Tahoma, Verdana, sans-serif;
-                    font-size: 3em;
-                    border: 1px solid red;
-    }               
-    
-    #moneyTotal {
-                    text-align: center;
-                    margin-top: 10px;
-                    font-family: Tahoma, Verdana, sans-serif;
-                    font-size: 3em;
-                    border: 1px solid red;
-    
-    }              
-    
-    #bagosugar {
-                    width: 50%;
-                    height: auto;
-                    cursor: pointer;
-                    transition: width 0.3s ease;
-                    border: 1px solid red;
-    }
-    
-    #money {
-                    width: 50%;
-                    height: auto;
-                    cursor: pointer;
-                    transition: width 0.3s ease;
-                    border: 1px solid red;
-    }
-    
-    .container {
-                    display: flex; /* Flexbox container */
-                    justify-content: space-around; /* Space elements evenly */
-                    align-items: center; /* Center elements vertically */
-                    height: 100%;
-                    background-color: lightblue;
-                    border: 1px solid black;
-                    margin: 0 auto;
-                    width: 95%;
-                    /*overflow: hidden*/                         
-    }
-    
-    .box {
-                    border: 1px solid black;
-                    padding: 10px;
-                    background-color: orange;
-                    float: left;
-                    text-align: center;
-                    height: 95vh;            
-    }
-    
-    .leftbox {
-                    width: 35%;
-    }
-    
-    .midbox {
-                    width: 40%;
-    }
-    
-    .rightbox {
-                    width: 25%;
-    }  
+		<meta charset="utf-8">
 
-  </style>
-</head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-               
+		<title>Sugar Clicker</title>
 
-<body>
+		<link rel="stylesheet" href="styles.css">
 
-  <div class="container">
-  
-    <div class="box leftbox">              
-      <img id="bagosugar" src="bagosugar.png" alt="Bag O' Sugar"> 
-      <div id="bagTotal">0</div>
-      <img id="money" src="money.png" alt="Stack O' Money">
-      <div id="moneyTotal">10</div>
+	</head>
 
-      <script>
-        const sugarImage = document.getElementById('bagosugar');
-        const moneyImage = document.getElementById('money');
-        
-        const moneyCounterDisplay = document.getElementById('moneyTotal'); 
-        const bagCounterDisplay = document.getElementById('bagTotal');
-        
-        let bagCurrentWidth = 50; // Initial width - must match CSS  
-        let moneyCurrentWidth = 50;
-        const defaultWidth = 50;
-        
-        let numBags = 0; // Initialize counter 
-        let numMoney = 10;
-  
-        sugarImage.addEventListener('click', function() {
+ 
 
-			if (numMoney >=5) {
-        	  bagCurrentWidth *= 1.10; // Increase width by 10%
-         	 sugarImage.style.width = bagCurrentWidth + '%'; // Apply new width
-         	 numBags++; // Increment the counter
-		 	 numMoney -= 5;
-		 	 moneyCounterDisplay.textContent = numMoney;
-         	 bagCounterDisplay.textContent = numBags; // Update counter display
+	<body>
+		<div class="outer"> 
+			<div class="main-container">
 
-          	setTimeout(function() {
-            	  bagCurrentWidth = defaultWidth;
-           	 sugarImage.style.width = bagCurrentWidth + '%';
-         	 }, 100); // Delay of 300 milliseconds before shrinking
+				<div class="top-section">
+					<div class="box titleCard">Sugar Clicker</div>
+					<div class="moneyGroup">
+						<img id="money" src="money.png" draggable="false"/>
+						<div id="moneyTracker">###</div>
+					</div>
+					<button class="menuButton">MENU</button>	
+				</div>
+				
+				
 
-			}
-
-        	});
-   
-        moneyImage.addEventListener('click', function() {
-
-			if (numBags >= 1) {
-        	 moneyCurrentWidth *= 1.10;
-          	moneyImage.style.width = moneyCurrentWidth + '%';
-         	numMoney += 10;
-		  	numBags -= 1;
-          	moneyCounterDisplay.textContent = numMoney;
-		  	bagCounterDisplay.textContent = numBags;
-
-          setTimeout(function() {
-            moneyCurrentWidth = defaultWidth;
-            moneyImage.style.width = moneyCurrentWidth + '%';
-          }, 100); // Delay of 300 milliseconds before shrinking
-
-		}
-
-		});
-
-      </script>
-
-    </div>
-    <div class="box midbox">
-  
-    </div>  
-    <div class="box rightbox">
-  
-    </div>
-  </div>
-</body>
+				<div class="bottom-section">
+					<div class="box playArea">
+						<div class="box leftSide">																				   
+							<div class="box sugarContainer">
+								<img id="sugar" src="bagosugar.png" draggable="false"/>
+								<div id="sugarTotal">###</div>
+								<button id="sell">SELL</button>
+								<div id="sps">### sugar per second</div>
+							</div>
+						</div>
+						<div class="box rightSide">
+							<div class="box buildingContainer">
+								<div class="box sugarMaker">
+									<img id="chemist" src="chemist.png" draggable="false"/>
+									<div class="chemText">Sugar Cooker</div>
+									<div id="chemNum">###</div>
+									<div id="chemCost">$###</div>
+								</div>
+								<div class="box candyMaker">CANDY MAKER</div>
+								<div class="box cornFarmer">CORN FARMER</div>
+								
+							</div>  
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>r
 </html>
